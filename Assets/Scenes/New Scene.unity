@@ -672,7 +672,7 @@ GameObject:
   - component: {fileID: 395734171}
   - component: {fileID: 395734170}
   m_Layer: 0
-  m_Name: Bottom view camera
+  m_Name: Side view camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -685,13 +685,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395734168}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.11763047, y: -0.24420385, z: 0.039850958, w: 0.96173775}
+  m_LocalPosition: {x: 1.03, y: 1.68, z: -2.04}
   m_LocalScale: {x: 0.64188415, y: 2.767017, z: 1}
   m_Children: []
   m_Father: {fileID: 381593558}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 14.225, y: -28.353, z: 1.135}
 --- !u!114 &395734170
 MonoBehaviour:
   m_ObjectHideFlags: 0
