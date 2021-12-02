@@ -250,7 +250,6 @@ GameObject:
   m_Component:
   - component: {fileID: 70604488}
   - component: {fileID: 70604491}
-  - component: {fileID: 70604490}
   - component: {fileID: 70604489}
   m_Layer: 0
   m_Name: Front view camera
@@ -306,14 +305,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!81 &70604490
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 70604487}
-  m_Enabled: 1
 --- !u!20 &70604491
 Camera:
   m_ObjectHideFlags: 0
@@ -369,7 +360,7 @@ GameObject:
   - component: {fileID: 116625077}
   - component: {fileID: 116625076}
   m_Layer: 5
-  m_Name: Bottom view
+  m_Name: Side view
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -543,9 +534,9 @@ GameObject:
   - component: {fileID: 381593556}
   - component: {fileID: 381593555}
   - component: {fileID: 381593559}
+  - component: {fileID: 381593560}
   - component: {fileID: 381593554}
   - component: {fileID: 381593561}
-  - component: {fileID: 381593560}
   m_Layer: 0
   m_Name: Drone
   m_TagString: Untagged
@@ -660,7 +651,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 381593554}
-  speed: 1.5
+  speed: 2.5
+  mouseSensitivity: 100
 --- !u!114 &381593560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -674,7 +666,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wind: {fileID: 381593561}
-  windDirection: {x: 1, y: 0, z: 1}
+  pulseMultiplier: 1.5
+  windDirection: {x: 0, y: 0, z: 0}
+  _isPulsing: 0
 --- !u!75 &381593561
 ConstantForce:
   m_ObjectHideFlags: 0
@@ -697,7 +691,6 @@ GameObject:
   m_Component:
   - component: {fileID: 395734169}
   - component: {fileID: 395734172}
-  - component: {fileID: 395734171}
   - component: {fileID: 395734170}
   m_Layer: 0
   m_Name: Side view camera
@@ -753,14 +746,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!81 &395734171
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 395734168}
-  m_Enabled: 1
 --- !u!20 &395734172
 Camera:
   m_ObjectHideFlags: 0
