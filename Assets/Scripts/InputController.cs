@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class InputController : MonoBehaviour
@@ -42,5 +43,15 @@ public class InputController : MonoBehaviour
     private void FixedUpdate()
     {
         _rigidbody.AddRelativeForce(_movement);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Trigger");
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        Debug.Log("Collision");
     }
 }
