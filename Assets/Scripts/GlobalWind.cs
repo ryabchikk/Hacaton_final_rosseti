@@ -47,9 +47,13 @@ public class GlobalWind : MonoBehaviour
     {
         while (pulsingToggle.isOn)
         {
+            var w = windDirection * windStrengthSlider.value;
             WindChanged?.Invoke(windDirection * windStrengthSlider.value);
+            Debug.Log($"Wind set to ({w.x}, {w.y}, {w.z})");
             yield return new WaitForSeconds(Random.Range(10, 30));
+            w = windDirection * (windStrengthSlider.value * pulseMultiplier);
             WindChanged?.Invoke(windDirection * (windStrengthSlider.value * pulseMultiplier));
+            Debug.Log($"Wind set to ({w.x}, {w.y}, {w.z})");
             yield return new WaitForSeconds(Random.Range(3, 7));
         }
     }
