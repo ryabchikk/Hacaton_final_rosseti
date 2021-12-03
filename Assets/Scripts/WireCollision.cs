@@ -12,7 +12,6 @@ public class WireCollision : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log($"First Position {collider.sharedMesh.vertices[0]}");
         _mesh = new Mesh();
         collider.sharedMesh = _mesh;
         
@@ -24,9 +23,6 @@ public class WireCollision : MonoBehaviour
         var mesh = collider.sharedMesh;
         mesh.MarkDynamic();
         renderer.BakeMesh(mesh, true);
-        mesh.bounds = renderer.bounds;
-        mesh.RecalculateNormals();
-        mesh.RecalculateTangents();
         mesh.Optimize();
         collider.enabled = true;
     }

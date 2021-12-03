@@ -652,7 +652,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 381593554}
   speed: 2.5
+  rotationAngle: 10
   mouseSensitivity: 100
+  _rotation: {x: 0, y: 0, z: 0}
+  rotationSpeed: 1.5
 --- !u!114 &381593560
 MonoBehaviour:
   m_ObjectHideFlags: 0
