@@ -26,26 +26,26 @@ public class InputController : MonoBehaviour
         var deltaRotationX = 0f;
         var deltaRotationZ = 0f;
         
-        if(Input.GetKey(KeyCode.W))
+        if(Input.GetKey(KeyCode.D))
         {
             rotatingX = true;
             _movement += Vector3.forward;
             deltaRotationX = rotationAngle * Time.deltaTime * rotationSpeed;
         }
-        else if(Input.GetKey(KeyCode.S))
+        else if(Input.GetKey(KeyCode.A))
         {
             rotatingX = true;
             _movement += Vector3.back;
             deltaRotationX = -rotationAngle * Time.deltaTime * rotationSpeed;
         }
         
-        if(Input.GetKey(KeyCode.A))
+        if(Input.GetKey(KeyCode.W))
         {
             rotatingZ = true;
             _movement += Vector3.left;
             deltaRotationZ = rotationAngle * Time.deltaTime * rotationSpeed;
         }
-        else if(Input.GetKey(KeyCode.D))
+        else if(Input.GetKey(KeyCode.S))
         {
             rotatingZ = true;
             _movement += Vector3.right;
