@@ -254,7 +254,7 @@ Material:
     - _HueVariationKwToggle: 0
     - _Metallic: 0
     - _NormalMapKwToggle: 1
-    - _OcclusionStrength: 0.455
+    - _OcclusionStrength: 0
     - _OldHueVarBehavior: 0
     - _Parallax: 0.005
     - _QueueOffset: 0
