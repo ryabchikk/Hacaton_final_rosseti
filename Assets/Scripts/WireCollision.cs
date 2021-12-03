@@ -1,12 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WireCollision : MonoBehaviour
 {
     [SerializeField] private new MeshCollider collider;
     [SerializeField] private new SkinnedMeshRenderer renderer;
+    [SerializeField] private GlobalWind globalWind;
+    [SerializeField] private Cloth cloth;
 
     private Mesh _mesh;
 
@@ -14,6 +13,7 @@ public class WireCollision : MonoBehaviour
     {
         _mesh = new Mesh();
         collider.sharedMesh = _mesh;
+        globalWind.WindChanged += WindChanged;
     }
 
     private void Update()
@@ -22,7 +22,11 @@ public class WireCollision : MonoBehaviour
         var mesh = collider.sharedMesh;
         mesh.MarkDynamic();
         renderer.BakeMesh(mesh, true);
-        mesh.Optimize();
         collider.enabled = true;
+    }
+
+    private void WindChanged(Vector3 direction)
+    {
+        cloth.externalAcceleration = direction;
     }
 }
