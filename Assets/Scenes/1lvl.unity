@@ -849,7 +849,7 @@ Cloth:
   - maxDistance: 0
     collisionSphereDistance: 3.4028235e+38
   m_CapsuleColliders:
-  - {fileID: 1169397948}
+  - {fileID: 0}
   m_SphereColliders: []
   m_SelfCollisionDistance: 0
   m_SelfCollisionStiffness: 0.2
@@ -1153,7 +1153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c3b55d5ae3f0a5945837d2773863c894, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.07
+      value: 1.06
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c3b55d5ae3f0a5945837d2773863c894, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1226,7 +1226,6 @@ GameObject:
   - component: {fileID: 1169397942}
   - component: {fileID: 1169397941}
   - component: {fileID: 1169397940}
-  - component: {fileID: 1169397948}
   m_Layer: 0
   m_Name: Drone
   m_TagString: Untagged
@@ -1291,8 +1290,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 1169397941}
-  speed: 20.3
   mouseSensitivity: 100
+  speed: 20.3
+  rotationAngle: 10
+  rotationSpeed: 1.5
 --- !u!65 &1169397944
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1371,20 +1372,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1169397948
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1169397939}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.37
-  m_Height: 1.24
-  m_Direction: 0
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1251309859
 GameObject:
   m_ObjectHideFlags: 0

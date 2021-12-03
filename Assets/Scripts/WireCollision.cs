@@ -14,7 +14,6 @@ public class WireCollision : MonoBehaviour
     {
         _mesh = new Mesh();
         collider.sharedMesh = _mesh;
-        
     }
 
     private void Update()
