@@ -3,7 +3,7 @@ using UnityEngine;
 public class WireCollision : MonoBehaviour
 {
     [SerializeField] private new MeshCollider collider;
-    [SerializeField] private new SkinnedMeshRenderer renderer;
+    [SerializeField] private SkinnedMeshRenderer _renderer;
     [SerializeField] private GlobalWind globalWind;
     [SerializeField] private Cloth cloth;
 
@@ -21,7 +21,7 @@ public class WireCollision : MonoBehaviour
         collider.enabled = false;
         var mesh = collider.sharedMesh;
         mesh.MarkDynamic();
-        renderer.BakeMesh(mesh, true);
+        _renderer.BakeMesh(mesh, true);
         collider.enabled = true;
     }
 
