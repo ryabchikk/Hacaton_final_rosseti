@@ -6728,11 +6728,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1180820765}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 372.91, y: 49.3, z: 553.33}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 5.4499817, y: 43.36, z: -10.320007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1935962856}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1251309859
@@ -7201,8 +7201,8 @@ MonoBehaviour:
   _rigidbody: {fileID: 1935962855}
   mouseSensitivity: 100
   speed: 20
-  rotationAngle: 0
-  rotationSpeed: 0
+  rotationAngle: 10
+  rotationSpeed: 1.54
 --- !u!114 &1935962852
 MonoBehaviour:
   m_ObjectHideFlags: 0
