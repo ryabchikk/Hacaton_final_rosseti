@@ -107,13 +107,8 @@ public class InputController : MonoBehaviour
         _rigidbody.AddRelativeForce(_movement);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("Trigger");
-    }
-
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log("Collision");
+        
     }
 }

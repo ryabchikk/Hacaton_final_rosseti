@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wire
+  - Waypoint
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Waypoints
   - Water
   - UI
   - 
