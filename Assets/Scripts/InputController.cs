@@ -6,7 +6,7 @@ public class InputController : MonoBehaviour
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private float mouseSensitivity;
     [Range(1, 30)] [SerializeField] private float speed;
-    [Range(1, 90)] [SerializeField] private float rotationAngle;
+    [Range(1, 90)] [SerializeField] private int rotationAngle;
     [Range(0, 10)] [SerializeField] private float rotationSpeed;
 
     private Vector3 _movement;
