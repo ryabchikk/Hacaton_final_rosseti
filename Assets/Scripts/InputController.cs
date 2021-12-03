@@ -4,7 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class InputController : MonoBehaviour
 {
-    [SerializeField] private Rigidbody _rigidbody;
+    [SerializeField] private new Rigidbody rigidbody;
+    [SerializeField] private Transform horizon;
     [SerializeField] private float mouseSensitivity;
     [Range(1, 30)] [SerializeField] private float speed;
     [Range(1, 90)] [SerializeField] private int rotationAngle;
@@ -12,6 +13,7 @@ public class InputController : MonoBehaviour
 
     private Vector3 _movement;
     private Vector3 _rotation;
+    private bool _controllable = true;
 
     private void Start()
     {
@@ -21,6 +23,9 @@ public class InputController : MonoBehaviour
 
     private void Update()
     {
+        if(_controllable == false)
+            return;
+        
         if (Input.GetKey(KeyCode.Escape))
         {
             Cursor.lockState = CursorLockMode.None;
@@ -67,20 +72,44 @@ public class InputController : MonoBehaviour
         }
         
         if(Input.GetKey(KeyCode.Space))
-        {
             _movement += Vector3.up;
-        }
         else if(Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
-        {
             _movement += Vector3.down;
-        }
-        
+
         _movement *= speed;
         
         
         var rotation = Input.GetAxis("Mouse X") * Time.deltaTime * mouseSensitivity;
         transform.Rotate(Vector3.up, rotation, Space.World);
         
+        TryRotate(deltaRotationX, deltaRotationZ);
+
+        var deltaRotation = Vector3.zero;
+        if (rotatingX == false)
+            RotateBackX(ref deltaRotation);
+        
+        if(rotatingZ == false)
+            RotateBackZ(ref deltaRotation);
+
+        _rotation += deltaRotation;
+        transform.rotation *= Quaternion.Euler(deltaRotation);
+        horizon.rotation = Quaternion.Euler(new Vector3(0, 0, _rotation.x));
+    }
+
+    private void FixedUpdate()
+    {
+        rigidbody.AddRelativeForce(_movement);
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Landing")) return;
+        _controllable = false;
+        rigidbody.useGravity = true;
+    }
+
+    private void TryRotate(float deltaRotationX, float deltaRotationZ)
+    {
         if(Math.Abs(_rotation.x) < rotationAngle)
         {
             _rotation.x += deltaRotationX;
@@ -92,37 +121,23 @@ public class InputController : MonoBehaviour
             _rotation.z += deltaRotationZ;
             transform.rotation *= Quaternion.Euler(new Vector3(0, 0, deltaRotationZ));
         }
-
-        var deltaRotation = Vector3.zero;
-        if(rotatingX == false)
-        {
-            if (Math.Abs(_rotation.x) > 0.5)
-                deltaRotation -= new Vector3(rotationAngle * Math.Sign(_rotation.x) * Time.deltaTime * rotationSpeed, 0,
-                    0);
-            else
-                deltaRotation.x = -_rotation.x;
-        }
-
-        if(rotatingZ == false)
-        {
-            if (Math.Abs(_rotation.z) > 0.5)
-                deltaRotation -= new Vector3(0, 0,
-                    rotationAngle * Math.Sign(_rotation.z) * Time.deltaTime * rotationSpeed);
-            else
-                deltaRotation.z = -_rotation.z;
-        }
-
-        _rotation += deltaRotation;
-        transform.rotation *= Quaternion.Euler(deltaRotation);
     }
 
-    private void FixedUpdate()
+    private void RotateBackX(ref Vector3 deltaRotation)
     {
-        _rigidbody.AddRelativeForce(_movement);
+        if (Math.Abs(_rotation.x) > 0.5)
+            deltaRotation -= new Vector3(rotationAngle * Math.Sign(_rotation.x) * Time.deltaTime * rotationSpeed, 0,
+                0);
+        else
+            deltaRotation.x = -_rotation.x;
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void RotateBackZ(ref Vector3 deltaRotation)
     {
-        SceneManager.LoadScene(1);
+        if (Math.Abs(_rotation.z) > 0.5)
+            deltaRotation -= new Vector3(0, 0,
+                rotationAngle * Math.Sign(_rotation.z) * Time.deltaTime * rotationSpeed);
+        else
+            deltaRotation.z = -_rotation.z;
     }
 }
