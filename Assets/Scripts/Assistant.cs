@@ -25,7 +25,7 @@ public class Assistant : MonoBehaviour
             return;
         
         if(_playerInRange)
-            transform.Translate(Time.deltaTime * speed * (_currentWaypoint.position - transform.position));
+            transform.Translate(Time.deltaTime * speed * (_currentWaypoint.position - transform.position).normalized);
     }
 
     private void OnTriggerEnter(Collider other)

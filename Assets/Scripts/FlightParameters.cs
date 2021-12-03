@@ -8,7 +8,7 @@ public static class FlightParameters
 
     public static float GetCurrentAltitude(Transform transform)
     {
-        return transform.position.y * CoordMultiplier;
+        return transform.position.y * CoordMultiplier - 2;
     }
 
     public static float GetCurrentSpeed(Rigidbody rigidbody)
