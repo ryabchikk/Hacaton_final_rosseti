@@ -667,7 +667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wind: {fileID: 381593561}
   pulseMultiplier: 1.5
-  windDirection: {x: 0, y: 0, z: 0}
+  windDirection: {x: 1, y: 0, z: 0}
   _isPulsing: 0
 --- !u!75 &381593561
 ConstantForce:
