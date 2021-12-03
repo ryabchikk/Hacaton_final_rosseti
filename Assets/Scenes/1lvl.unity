@@ -1537,8 +1537,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collider: {fileID: 484894671}
   renderer: {fileID: 484894669}
-  globalWind: {fileID: 0}
-  cloth: {fileID: 0}
+  globalWind: {fileID: 2052816610}
+  cloth: {fileID: 484894670}
 --- !u!137 &484894669
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -4170,8 +4170,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collider: {fileID: 946149877}
   renderer: {fileID: 946149873}
-  globalWind: {fileID: 0}
-  cloth: {fileID: 0}
+  globalWind: {fileID: 2052816610}
+  cloth: {fileID: 946149872}
 --- !u!1 &999329842
 GameObject:
   m_ObjectHideFlags: 0
