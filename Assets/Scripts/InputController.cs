@@ -117,6 +117,8 @@ public class InputController : MonoBehaviour
     private IEnumerator Death()
     {
         yield return new WaitForSeconds(5);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         SceneManager.LoadScene("1lvl");
     }
     
