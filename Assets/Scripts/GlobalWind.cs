@@ -21,7 +21,7 @@ public class GlobalWind : MonoBehaviour
     [SerializeField] private Toggle pulsingToggle;
     [SerializeField] private Toggle toggle;
     [SerializeField] private Slider windStrengthSlider;
-    [SerializeField] private TMP_Dropdown directionDropdown;
+    [SerializeField] private Dropdown directionDropdown;
     
     private Vector3 windDirection;
 
