@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +8,8 @@ public class InputController : MonoBehaviour
     [SerializeField] private new Rigidbody rigidbody;
     [SerializeField] private Transform horizon;
     [SerializeField] private float mouseSensitivity;
+    [SerializeField] private GameObject upscreenDeath;
+    [SerializeField] private GameObject upscreen;
     [Range(1, 30)] [SerializeField] private float speed;
     [Range(1, 90)] [SerializeField] private int rotationAngle;
     [Range(0, 10)] [SerializeField] private float rotationSpeed;
@@ -106,8 +109,17 @@ public class InputController : MonoBehaviour
         if (other.gameObject.CompareTag("Landing")) return;
         _controllable = false;
         rigidbody.useGravity = true;
+        upscreen.SetActive(false);
+        upscreenDeath.SetActive(true);
+        StartCoroutine(Death());
     }
 
+    private IEnumerator Death()
+    {
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene("1lvl");
+    }
+    
     private void TryRotate(float deltaRotationX, float deltaRotationZ)
     {
         if(Math.Abs(_rotation.x) < rotationAngle)

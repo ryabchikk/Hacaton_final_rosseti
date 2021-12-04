@@ -17,7 +17,7 @@ public class Upscreen : MonoBehaviour
     {
         for (int i = 0; i < 100; i++)
         {
-            text.alpha += 1;
+            text.alpha += 0.01f;
             yield return new WaitForSeconds(0.01f);
         }
 
@@ -25,7 +25,7 @@ public class Upscreen : MonoBehaviour
         
         for (int i = 0; i < 100; i++)
         {
-            text.alpha -= 1;
+            text.alpha -= 0.01f;
             yield return new WaitForSeconds(0.01f);
         }
 
